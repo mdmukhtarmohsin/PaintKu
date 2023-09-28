@@ -1,18 +1,18 @@
-import { Box, Container, Text, Image, useStatStyles } from "@chakra-ui/react";
+import { Box, Container, Text, Image } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 let ReviewsSection = () => {
   let [reviewIndex, setReviewIndex] = useState(0);
   let backgroundColors = ["black", "blue", "green", "red"];
   let data = [
     {
-      name: "Wade Waron",
+      name: "Kristleen Waron",
       review:
         "It is a long established fact that a reader will be cted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has more-or-less normal.",
       position: "CEO at Vision Trust",
       imageURL: "https://c.stocksy.com/a/Jmn700/z9/1859647.jpg",
     },
     {
-      name: "ABC Person",
+      name: "Tina smith",
       review:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur explicabo assumenda sapiente similique. Sed adipisci provident ab quam porro necessitatibus laboriosam nemo quaerat consectetur a, distinctio aliquam nisi quos libero alias, dolorum eveniet repellat modi eos. Nulla, autem. Quibusdam.",
       position: "CEO at Vision Trust",
@@ -20,7 +20,7 @@ let ReviewsSection = () => {
         "https://th.bing.com/th/id/OIP.Nolz7WP6ihgX54G98AcWnAHaEo?pid=ImgDet&rs=1",
     },
     {
-      name: "XYZ Person",
+      name: "John Doe",
       review:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur explicabo assumenda sapiente similique. Sed adipisci provident ab quam porro necessitatibus laboriosam nemo quaerat consectetur a, distinctio aliquam nisi quos libero alias, dolorum eveniet repellat modi eos. Nulla, autem. Quibusdam.",
       position: "CEO at Vision Trust",
@@ -28,7 +28,7 @@ let ReviewsSection = () => {
         "https://th.bing.com/th/id/OIP.FXBk1PVaDOtDvXwYO6QDVAAAAA?pid=ImgDet&rs=1",
     },
     {
-      name: "DEF Person",
+      name: "Kim Kardashian",
       review:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur explicabo assumenda sapiente similique. Sed adipisci provident ab quam porro necessitatibus laboriosam nemo quaerat consectetur a, distinctio aliquam nisi quos libero alias, dolorum eveniet repellat modi eos. Nulla, autem. Quibusdam.",
       position: "CEO at Vision Trust",
@@ -48,10 +48,11 @@ let ReviewsSection = () => {
   return (
     <Container maxW="100%" mt="50" p="1">
       <Box w="40%" m="auto" textAlign="center" p="10">
-        <Text fontSize="5xl">
-          What People <span style={{ color: "green" }}>Are Saying</span>
+        <Text fontSize="30px">
+          What People{" "}
+          <span style={{ color: "green", fontSize: "30px" }}>Are Saying</span>
         </Text>
-        <Text mt="4">
+        <Text mt="4" fontSize={"20px"}>
           With each Livary Wall we send you our passion for beautiful for your
           home . The Content of each Wall is agreed with the Creators.
         </Text>
@@ -97,7 +98,7 @@ let ReviewsSection = () => {
             boxSize="90%"
           >
             <Box>
-              <Text fontSize="2xl">{currentReview.name}</Text>
+              <Text fontSize="30px">{currentReview.name}</Text>
               <Text color="gray.600">{currentReview.position}</Text>
             </Box>
             <Box display="flex" gap="2">
