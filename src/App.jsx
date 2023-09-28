@@ -1,3 +1,4 @@
+import { InspirationContent } from './Components/InspirationContent'
 import TopHome from './Components/TopHome'
 import { Products } from './Pages/Products'
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <TopHome />
       <Products/>
+      <InspirationContent/>
     </div>
   )
 }
