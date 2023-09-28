@@ -46,7 +46,11 @@ let ReviewsSection = () => {
   let currentReview = data[reviewIndex];
   let backgroundColor = backgroundColors[reviewIndex];
   return (
-    <Container maxW="100%" mt="50" p="1">
+    <Container
+      maxW={{ base: "100%", sm: "100%", md: "80%", lg: "70%" }}
+      mt={{ base: "20", md: "50" }}
+      p="1"
+    >
       <Box w="40%" m="auto" textAlign="center" p="10">
         <Text fontSize="30px">
           What People{" "}
@@ -65,8 +69,14 @@ let ReviewsSection = () => {
         letterSpacing="1px"
         justifyContent="space-between"
       >
-        <Box boxSize="300px" h="350px" bgColor="gray.100" p="5">
-          <Image w="100%" h="100%" src={currentReview.imageURL} />
+        <Box boxSize="300px" h="350px" bgColor="lightgray" p="5">
+          <Image
+            w="90%"
+            h="90%"
+            src={currentReview.imageURL}
+            m={"auto"}
+            p={"15"}
+          />
         </Box>
         <Box boxSize="70%">
           <Box
@@ -100,36 +110,6 @@ let ReviewsSection = () => {
             <Box>
               <Text fontSize="30px">{currentReview.name}</Text>
               <Text color="gray.600">{currentReview.position}</Text>
-            </Box>
-            <Box display="flex" gap="2">
-              <Box
-                w="3"
-                h="3"
-                border="1px solid black"
-                borderRadius="50%"
-                bgColor={backgroundColor === "black" ? "black" : "transparent"}
-              ></Box>
-              <Box
-                w="3"
-                h="3"
-                border="1px solid black"
-                borderRadius="50%"
-                bgColor={backgroundColor === "blue" ? "blue" : "transparent"}
-              ></Box>
-              <Box
-                w="3"
-                h="3"
-                border="1px solid black"
-                borderRadius="50%"
-                bgColor={backgroundColor === "green" ? "green" : "transparent"}
-              ></Box>
-              <Box
-                w="3"
-                h="3"
-                border="1px solid black"
-                borderRadius="50%"
-                bgColor={backgroundColor === "red" ? "red" : "transparent"}
-              ></Box>
             </Box>
           </Box>
         </Box>
