@@ -1,13 +1,13 @@
 
 import styled from 'styled-components';
 
-const InspirationContent=()=>{
+const InspirationContent = () => {
     return <DIV>
         <div className='box-1' >
-             <img src="https://m.media-amazon.com/images/I/61+BDdeWUDL._AC_UF1000,1000_QL80_.jpg" alt="wall with Painting"/>
+            <img src="https://m.media-amazon.com/images/I/61+BDdeWUDL._AC_UF1000,1000_QL80_.jpg" alt="wall with Painting" />
         </div>
         <div className='box-2'>
-            <text>Our Passion is Your <span style={{color:"green"}}>Inspiration</span></text>
+            <text>Our Passion is Your <span style={{ color: "green" }}>Inspiration</span></text>
             <br />
             <br />
             <p>With each Livary Wall we send you our passion for beautiful thing for your home.The content of each wall is agreed with thr Creators.</p>
@@ -16,9 +16,9 @@ const InspirationContent=()=>{
     </DIV>
 }
 
-export {InspirationContent}
+export default InspirationContent;
 
-const DIV=styled.div`
+const DIV = styled.div`
     width: 90%;
     display: flex;
     margin-left: 5%;
