@@ -27,10 +27,10 @@ const TopHome = () => {
         <div style={{ width: "90%", margin: "auto", display: "flex", gap: "40px", alignItems: "center" }}>
             <div style={{ width: "100%", height: "500px", margin: "auto", justifyContent: "center", backgroundColor: "#F0F0F0", justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column" }}>
                 <img src={photos[currPhoto]} alt="" style={{ width: "600px", height: "450px", margin: "auto" }} />
-                <div style={{ margin: "auto" }}>
-                    <input type="radio" value={0} name="photo" checked={currPhoto == "0"} onClick={(e) => setCurrPhoto(+e.target.value)} />
-                    <input type="radio" value={1} name="photo" checked={currPhoto == "1"} onClick={(e) => setCurrPhoto(+e.target.value)} />
-                    <input type="radio" value={2} name="photo" checked={currPhoto == "2"} onClick={(e) => setCurrPhoto(+e.target.value)} />
+                <div style={{ margin: "auto" }} onChange={(e) => setCurrPhoto(+e.target.value)}>
+                    <input type="radio" value={0} name="photo" checked={currPhoto == "0"} />
+                    <input type="radio" value={1} name="photo" checked={currPhoto == "1"} />
+                    <input type="radio" value={2} name="photo" checked={currPhoto == "2"} />
                 </div>
             </div>
             <div style={{ width: "100%" }}>
@@ -41,7 +41,6 @@ const TopHome = () => {
                     <img style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "50px", border: "1px solid white" }} src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.2.1157295257.1695267253&semt=sph" alt="" />
                     <img style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "50px", marginLeft: "-5px", border: "1px solid white" }} src="https://img.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg?size=626&ext=jpg&ga=GA1.1.1157295257.1695267253&semt=sph" alt="" />
                     <img style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "50px", marginLeft: "-5px", border: "1px solid white" }} src="https://img.freepik.com/free-photo/indian-man-smiling-cheerful-expression-closeup-portrait_53876-129387.jpg?size=626&ext=jpg&ga=GA1.2.1157295257.1695267253&semt=sph" alt="" />
-                    {/* <img src="" alt="" /> */}
                     <span style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "50px", marginLeft: "-5px", backgroundColor: "#4AAB76", textAlign: "center", display: "flex", alignItems: "center" }}><BsArrowUpRight style={{ margin: "auto", color: "white", width: "30px", height: "30px", objectFit: "cover" }} /></span>
                 </div>
                 <p style={{ fontSize: "20px", fontWeight: 300 }}>Meet Our Expert Artist</p>

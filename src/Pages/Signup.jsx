@@ -47,13 +47,11 @@ function Signup() {
     };
     // console.log(user)
     dispatch(signup(user));
-    //  navigate("/Login")
+    // navigate("/login")
     // setshow(!show);
 
-    //Complete navigation after routing
-    
   };
-  
+
   return (
     <div className="abcd signup-page">
       {show ? (
@@ -81,7 +79,7 @@ function Signup() {
               name="password"
               value={password}
             />
-           <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
       ) : (
