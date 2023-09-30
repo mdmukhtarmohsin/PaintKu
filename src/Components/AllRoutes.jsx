@@ -3,7 +3,7 @@ import HomePage from "../Pages/HomePage";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup"
 import SingleProduct from "./SingleProduct";
-import Products from "../Pages/Products";
+import Products from "../Pages/HomeProducts";
 const AllRoutes = () => {
     return <Routes>
         <Route path="/" element={<HomePage />} />
