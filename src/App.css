@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -52,25 +55,25 @@
   padding: 20px 30px;
   text-align: center;
 
-  
+
 
 }
 
 
-.loginpage .loginbtn{
+.loginpage .loginbtn {
   cursor: pointer;
 }
 
-.loginpage form{
+.loginpage form {
   /* padding-top: 50px; */
   display: flex;
   flex-direction: column;
   gap: 20px;
- height: 250px;
-  
+  height: 250px;
+
 }
 
-.loginpage input{
+.loginpage input {
   padding: 5px 5px;
   border-radius: 4px;
   border: none;
@@ -80,21 +83,20 @@
 
 .loginpage button {
   padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 40px;
+  background-color: #47bd47;
+  ;
+  color: aliceblue;
+}
 
-      border-radius: 10px;
-      border: none;
-      margin-top: 40px;
-      background-color:  #47bd47;;
-      color: aliceblue;
+.loginpage h1 {
+  color: #47bd47;
+  ;
 }
-.loginpage h1{
-  color:  #47bd47;;
-}
+
 .loginpage {
   padding-top: 70px;
   background-color: white;
 }
-
-
-
-
