@@ -62,21 +62,21 @@ function Signup() {
           <form onSubmit={(e) => signform(e)}>
             <input
               type="text"
-              placeholder="name"
+              placeholder="Enter username"
               onChange={(e) => uservlaue(e)}
               name="name"
               value={name}
             />
             <input
               type="email"
-              placeholder="email"
+              placeholder="Enter email"
               onChange={(e) => email_val(e)}
               name="email"
               value={email}
             />
             <input
               type="password"
-              placeholder="password"
+              placeholder="Enter password"
               onChange={(e) => pass_val(e)}
               name="password"
               value={password}
