@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../redux/Authentication/action";
 import Login from "./Login";
+// import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [show, setshow] = useState(true);
@@ -16,6 +17,8 @@ function Signup() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [name, setname] = useState("");
+
+  // const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -44,10 +47,13 @@ function Signup() {
     };
     // console.log(user)
     dispatch(signup(user));
-
+    //  navigate("/Login")
     // setshow(!show);
-  };
 
+    //Complete navigation after routing
+    
+  };
+  
   return (
     <div className="abcd signup-page">
       {show ? (
@@ -75,7 +81,7 @@ function Signup() {
               name="password"
               value={password}
             />
-            <input type="submit" value="Submit" />
+           <button type="submit">Submit</button>
           </form>
         </div>
       ) : (
