@@ -1,92 +1,111 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { signup } from "../redux/Authentication/action";
-import Login from "./Login";
-// import { useNavigate } from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
+import styled from "styled-components";
+
+const initialState={
+  email:"",
+  password:"",
+  name:""
+}
 
 function Signup() {
-  const [show, setshow] = useState(true);
-
-  const { isAuth } = useSelector((store) => {
-    console.log(store);
-    return {
-      isAuth: store.authReducer.isAuth,
-    };
-  });
-
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
-  const [name, setname] = useState("");
-
-  // const navigate = useNavigate();
 
   const dispatch = useDispatch();
+  const [userData, setUserData] = useState(initialState);
+  const [gotoLogin, setGotoLogin]=useState(false)
 
-  // https://64b65d04df0839c97e156cc4.mockapi.io/users
-
-  const uservlaue = (e) => {
-    setname(e.target.value);
-  };
-
-  const email_val = (e) => {
-    setemail(e.target.value);
-  };
-
-  const pass_val = (e) => {
-    setpassword(e.target.value);
-  };
-
-  const signform = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    // console.log(email , password, name)
-
-    let user = {
-      email: email,
-      password: password,
-      name: name,
-    };
-    // console.log(user)
-    dispatch(signup(user));
-    // navigate("/login")
-    // setshow(!show);
-
+    if(userData.email && userData.password&& userData.name)
+    {
+      let user = {
+        email: userData.email,
+        password: userData.password,
+        name: userData.name,
+      };
+      dispatch(signup(user)).then(res=>{
+        setGotoLogin(true)
+      })
+    }else{
+      alert("Please fill All Sections");
+    }
+   
   };
-
+  if(gotoLogin)
+  {
+    return <Navigate  to="/login"/>
+  }
+  const {email,password,name}=userData;
   return (
-    <div className="abcd signup-page">
-      {show ? (
-        <div className="signupage loginpage">
+    <DIV>
+        <div className="box">
           <h1> Signup</h1>
-          <form onSubmit={(e) => signform(e)}>
+          <form className="formData">
             <input
               type="text"
               placeholder="Enter username"
-              onChange={(e) => uservlaue(e)}
               name="name"
               value={name}
+              onChange={e=> setUserData({...userData, name:e.target.value})}
             />
             <input
               type="email"
               placeholder="Enter email"
-              onChange={(e) => email_val(e)}
               name="email"
               value={email}
+              onChange={e=> setUserData({...userData, email:e.target.value})}
             />
             <input
               type="password"
               placeholder="Enter password"
-              onChange={(e) => pass_val(e)}
               name="password"
               value={password}
+              onChange={e=> setUserData({...userData, password:e.target.value})}
             />
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={handleSignup}>Submit</button>
+            <p>Already have an account <Link to="/login"><span style={{color:"red"}}>Register</span></Link></p>
           </form>
+          
         </div>
-      ) : (
-        <Login />
-      )}
-    </div>
+    </DIV>
   );
 }
 
 export default Signup;
+
+const DIV = styled.div`
+    width: 100%;
+    .box{
+      width: 400px;
+      margin: auto;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+      padding: 20px 30px;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+
+    .formData{
+      display: flex;
+      flex-direction:column;
+      gap: 20px;
+    }
+    h1{
+      font-size: 30px;
+      color:red;
+      margin-bottom:20px
+    }
+    input {
+       padding: 8px;
+       border-radius: 5px;
+       border: 1px solid grey;
+    }
+    button{
+      padding: 5px;
+      border-radius: 10px;
+      background-color:  #47bd47;;
+      color: aliceblue;
+      font-size: 20px;
+    }
+`
