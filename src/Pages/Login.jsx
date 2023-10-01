@@ -38,6 +38,7 @@ function Login() {
     <DIV auth={isAuth.toString()}>
       <div className="box">
       <h1>Login</h1>
+
       <form onSubmit={handleSubmit} className="formData">
         <input
           type="email"
