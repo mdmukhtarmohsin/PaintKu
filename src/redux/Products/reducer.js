@@ -1,10 +1,11 @@
-import { FETCH_FAILURE, FETCH_RQUEST, HOME_PRODUCT } from "../actionTypes"
+import { All_PRODUCT, FETCH_FAILURE, FETCH_RQUEST, HOME_PRODUCT } from "../actionTypes"
 
 
 const initialState = {
     isLoading:false,
     isError:false,
-    homeProducts:[]
+    homeProducts:[],
+    products:[]
 }
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -17,6 +18,9 @@ export const reducer = (state = initialState, { type, payload }) => {
         }
         case HOME_PRODUCT :{
             return { ...state, isLoading:false, homeProducts:payload}
+        }
+        case All_PRODUCT :{
+            return { ...state, isLoading:false, products:payload}
         }
         default:
             return state;
