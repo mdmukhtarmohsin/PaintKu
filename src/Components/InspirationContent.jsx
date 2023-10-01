@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const InspirationContent = () => {
     return <DIV>
         <div className='box-1' >
-            <img src="https://m.media-amazon.com/images/I/61+BDdeWUDL._AC_UF1000,1000_QL80_.jpg" alt="wall with Painting" />
+             <img src="https://m.media-amazon.com/images/I/61+BDdeWUDL._AC_UF1000,1000_QL80_.jpg" alt="wall_Painting"/>
         </div>
         <div className='box-2'>
             <text>Our Passion is Your <span style={{ color: "green" }}>Inspiration</span></text>

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Navbar = () => {
     return <DIV>
-        <h1>PaintKu.</h1>
+        <h1 className="heading">PaintKu.</h1>
         <div className="linkDiv">
             <Link className="links" to={"/"}>Home</Link>
             <Link className="links" to={"/products"} >Products</Link>
@@ -29,5 +29,8 @@ const DIV = styled.div`
         display: flex;
         gap: 20px;
         justify-content: space-between;
+    }
+    .heading{
+        font-size: 40px;
     }
 `
