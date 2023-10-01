@@ -2,10 +2,18 @@ import TopHome from "../Components/TopHome"
 import SingleProduct from "../Components/SingleProduct"
 import InspirationContent from "../Components/InspirationContent"
 import ApproachHome from "../Components/ApproachHome"
+import HomeProducts from "./HomeProducts"
+import { useSelector } from "react-redux"
+
+
+
 const HomePage = () => {
+
+    const user=useSelector((store)=>store.authReducer.user);
+    console.log(user,"User")
     return <div>
         <TopHome />
-        <SingleProduct />
+        <HomeProducts/>
         <InspirationContent />
         <ApproachHome />
     </div>

@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,61 +43,5 @@
 .read-the-docs {
   color: #888;
 }
-
-
-
-/*  login signup css */
-
-.loginpage {
-  width: 400px;
-  margin: 150px auto;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
-  padding: 20px 30px;
-  text-align: center;
-
-  
-
-}
-
-
-.loginpage .loginbtn{
-  cursor: pointer;
-}
-
-.loginpage form{
-  /* padding-top: 50px; */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
- height: 250px;
-  
-}
-
-.loginpage input{
-  padding: 5px 5px;
-  border-radius: 4px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
-  margin-top: 15px;
-}
-
-.loginpage button {
-  padding: 10px 30px;
-
-      border-radius: 10px;
-      border: none;
-      margin-top: 40px;
-      background-color:  #47bd47;;
-      color: aliceblue;
-}
-.loginpage h1{
-  color:  #47bd47;;
-}
-.loginpage {
-  padding-top: 70px;
-  background-color: white;
-}
-
-
 
 

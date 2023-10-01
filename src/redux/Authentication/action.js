@@ -1,39 +1,24 @@
 import axios from "axios";
-import { LOGIN_FAILURE, LOGIN_RQUEST, SIGNUP_FAILURE, SIGNUP_SUCCESS } from "./actionTypes";
+import { FETCH_FAILURE, FETCH_RQUEST,LOGIN_SUCCESS, SIGNUP_SUCCESS } from "../actionTypes";
+const api="https://64b65d04df0839c97e156cc4.mockapi.io/users";
 
-export const login = (user_data) =>  (dispatch) => {
-  dispatch({ type: LOGIN_RQUEST });
-
-  return axios
-    .post(`https://64b65d04df0839c97e156cc4.mockapi.io/users`, user_data)
-    .then((res) => {
-      // console.log(res);
-
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data }).then((res) => {
-        console.log(res.data)
-      })
+export const login = (email,password) => (dispatch) => {
+  return (
+    dispatch({type:FETCH_RQUEST}),
+    axios.get(`https://64b65d04df0839c97e156cc4.mockapi.io/users?email=${email}&password=${password}`)
+    .then(res => res.data )
+    .catch(err=> {
+      dispatch({type:FETCH_FAILURE});
     })
-    .catch((err) => {
-      dispatch({ type: LOGIN_FAILURE });
-    });
+  )
 };
-
 
 
 export const signup = (user) => (dispatch) => {
-  dispatch({ type: SIGNUP_REQUEST });
-
-  return axios
-    .post(`https://64b65d04df0839c97e156cc4.mockapi.io/users`, user)
-    .then((res) => {
-      console.log(res.data);
-
-      dispatch({ type: SIGNUP_SUCCESS, payload: res.data});
-    })
-    .catch((err) => {
-      dispatch({ type: SIGNUP_FAILURE });
-    });
+  return (
+    dispatch({type:FETCH_RQUEST}),
+    axios.post(`${api}`,user)
+    .then(res => dispatch({type:SIGNUP_SUCCESS}))
+    .catch(err=> dispatch({type:FETCH_FAILURE}))
+  )
 };
-
-
-// eve.holt@reqres.in
