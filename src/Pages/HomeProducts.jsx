@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { store } from "../redux/store";
 import ProductCard from "../Components/ProductCard";
 import { useEffect } from "react";
-import { getData } from "../redux/Products/action";
+import { getAllProducts, getData } from "../redux/Products/action";
 
 const HomeProducts = () => {
     const dispatch=useDispatch();
@@ -11,6 +11,7 @@ const HomeProducts = () => {
     useEffect(()=>{
         let api ="https://lcal-pay.onrender.com/products";
         dispatch(getData(api));
+        dispatch(getAllProducts(api));
     },[products])
     return <div style={{ marginLeft: "5%",marginBottom:"50px",marginTop:"50px" }}>
         <p style={{ fontSize: "45px", fontWeight: "300px" }}>Featured <span style={{ color: "green" }}>Artworks</span></p>
