@@ -28,9 +28,9 @@ const TopHome = () => {
             <div style={{ width: "100%", height: "500px", margin: "auto", justifyContent: "center", backgroundColor: "#F0F0F0", justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column" }}>
                 <img src={photos[currPhoto]} alt="" style={{ width: "600px", height: "450px", margin: "auto" }} />
                 <div style={{ margin: "auto" }} onChange={(e) => setCurrPhoto(+e.target.value)}>
-                    <input type="radio" value={0} name="photo" checked={currPhoto == "0"} />
-                    <input type="radio" value={1} name="photo" checked={currPhoto == "1"} />
-                    <input type="radio" value={2} name="photo" checked={currPhoto == "2"} />
+                    <input type="radio" value={0} name="photo" defaultChecked={currPhoto == "0"} />
+                    <input type="radio" value={1} name="photo" defaultChecked={currPhoto == "1"} />
+                    <input type="radio" value={2} name="photo" defaultChecked={currPhoto == "2"} />
                 </div>
             </div>
             <div style={{ width: "100%" }}>
