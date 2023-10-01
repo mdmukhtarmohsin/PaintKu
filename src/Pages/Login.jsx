@@ -1,92 +1,99 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-
 import styled from "styled-components";
 import { login } from "../redux/Authentication/action";
+import { Link, Navigate } from "react-router-dom";
+import { useRef } from "react";
+import { LOGIN_SUCCESS } from "../redux/actionTypes";
 
 
 function Login() {
 
-
-  const [email, setemail] = useState("");
-  const [password, setpasssword] = useState("");
+ const emailRef=useRef();
+ const passwordRef=useRef();
   const dispatch = useDispatch();
+  const isAuth = useSelector((store) => store.authReducer.isAuth);
 
-  const { isAuth, Email, Name, Password } = useSelector((store) => {
-    console.log(store);
-    return {
-      isAuth: store.authReducer.isAuth,
-      Email: store.authReducer.user.email,
-      Name: store.authReducer.user.name,
-      Password: store.authReducer.user.password
-
-    };
-  });
-  // console.log(isAuth);
-
-  const handle_submit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    let user_data = {
-      email,
-      password,
-    };
-    // console.log(user_data);
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
-    if (user_data.email == Email && user_data.password == Password) {
-
-      dispatch(login(user_data))
-    }
-
+    dispatch(login(email,password)).then(res=>{
+      if(res.length>0)
+      {
+        dispatch({type:LOGIN_SUCCESS, payload:res[0]});
+      }else{
+        alert("Incorrect Credentials");
+      }
+    });
   };
 
-
+  if(isAuth)
+  {
+   return  <Navigate to="/"/>
+  }
   return (
-    <DIV auth={isAuth} className="loginpage">
-
+    <DIV auth={isAuth.toString()}>
+      <div className="box">
       <h1>Login</h1>
-
-      {/* <h2>{isAuth ? "Login Successfull" : "Login to Continue"}</h2> */}
-
-
-
-      <form onSubmit={(e) => handle_submit(e)}>
+      <form onSubmit={handleSubmit} className="formData">
         <input
           type="email"
-          placeholder="Enter email "
-          name="email"
-          value={email}
-          onChange={(e) => setemail(e.target.value)}
+          placeholder="Enter email"
+          ref={emailRef}
+          required
         />
         <input
           type="password"
           placeholder="Enter password"
-          name="password"
-          value={password}
-          onChange={(e) => setpasssword(e.target.value)}
+          ref={passwordRef}
+          required
         />
-
-        <button type="submit">Login</button>
-
+        <button>Login</button>
+        <p>Don't have account <Link to="/signup"><span style={{color:"red"}}>Register</span></Link></p>
       </form>
+      </div>
     </DIV>
   );
 }
 
-
-
-
 const DIV = styled.div`
-
- h2 {
-  color : ${({ auth }) => (auth ? "green" : "red")}
-}
-
- input {
-  padding: 8px;
-  border-radius: 4px;
-  border: ${({ err }) => (err ? "1px solid red" : "1px solid grey")}
-}
+ width: 100%;
+    .box{
+      width: 400px;
+      margin: auto;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+    .formData{
+      display: flex;
+      flex-direction:column;
+      gap: 20px;
+    }
+    input{
+      padding: 5px;
+    }
+    button{
+      padding: 5px;
+      border-radius: 10px;
+      background-color:  #47bd47;;
+      color: aliceblue;
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 30px;
+      margin-bottom:20px;
+      color:red;
+    }
+    input {
+       padding: 8px;
+       border-radius: 5px;
+       border: 1px solid grey;
+    }
 `
 
 export default Login
