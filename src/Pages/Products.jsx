@@ -17,7 +17,7 @@ const Products = () => {
     const [totalData, setTotalData] = useState();
     const [currPage, setCurrPage] = useState(1);
     const limit = 12;
-    let url = new URL("https://local-pay.onrender.com/products");
+    let url = new URL("https://lcal-pay.onrender.com/products");
     const fetchTheData = () => {
         setLoading(true);
         if (query !== "") {
@@ -51,7 +51,7 @@ const Products = () => {
     const resetData = () => {
         window.location.reload();
     }
-    let url1 = new URL("https://local-pay.onrender.com/products");
+    let url1 = new URL("https://lcal-pay.onrender.com/products");
     const allthedata = () => {
         axios.get(url1)
             .then((res) => {
