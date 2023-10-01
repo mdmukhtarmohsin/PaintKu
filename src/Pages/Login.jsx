@@ -46,7 +46,7 @@ function Login() {
 
       <h1>Login</h1>
 
-      {/* <h2>{isAuth ? "Login Successfull" : "Login to Continue"}</h2> */}
+      <h2>{isAuth ? "Login Successfull" : "Login to Continue"}</h2>
 
 
 
