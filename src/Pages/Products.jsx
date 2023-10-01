@@ -87,10 +87,10 @@ const Products = () => {
                     <option value="desc">Descending</option>
                 </Select>
                 <Select placeholder="Select for Filter by Brand" w={["70%", "70%", "fit-content"]} focusBorderColor="#4AAB76" m={"auto"} borderColor={"#4AAB76"} value={filter} onChange={(e) => setFilter(e.target.value)} backgroundColor={"white"}>
-                    <option value="painting_mantra">Painting Mantra</option>
-                    <option value="pidilite">Pidilite</option>
-                    <option value="pitaara_box">Pitaara Box</option>
-                    <option value="wall_design">Wall Design</option>
+                    <option value="Painting Mantra">Painting Mantra</option>
+                    <option value="Pidilite">Pidilite</option>
+                    <option value="Pitaara Box">Pitaara Box</option>
+                    <option value="Wall Design">Wall Design</option>
                 </Select>
                 <Button backgroundColor={"#4AAB76"} color={"white"} onClick={fetchTheData}>Apply</Button>
                 <Button backgroundColor={"red"} color={"white"} onClick={resetData}>Reset</Button>
