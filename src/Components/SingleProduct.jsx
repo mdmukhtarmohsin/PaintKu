@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { store } from "../redux/store";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -24,7 +24,7 @@ const SingleProduct = () => {
         <div className="box-1">
             <img src={singleData.image}/>
             <div className="btn">
-                <button>ADD TO CART</button>
+                <button><Link to="/cart">ADD TO CART</Link></button>
                 <button>BUY NOW</button>
             </div>
         </div>
