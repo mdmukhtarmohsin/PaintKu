@@ -27,31 +27,31 @@ import { useSelector } from 'react-redux';
 // provide text Decoration Non or Remove underline on hover as well
 const NoDecorationLink = chakra(Link, {
     baseStyle: {
-      textDecoration: 'none',
-      _hover: {
-        textDecoration: 'none', 
-      },
+        textDecoration: 'none',
+        _hover: {
+            textDecoration: 'none',
+        },
     },
-  });
+});
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = React.useRef();
     const isAuth = useSelector((store) => store.authReducer.isAuth);
-    const userName= useSelector(store=> store.authReducer.user.name)
+    const userName = useSelector(store => store.authReducer.user.name)
     return (
-        <chakra.header marginBottom={"50px"} width={"100%"}>
+        <chakra.header marginBottom={"50px"} width={"100%"} >
             <Box bg="green.400" color="white" py={4} px={8} >
                 <Flex alignItems="center" >
-                    <NoDecorationLink href="#" > 
+                    <NoDecorationLink href="#" >
                         <Flex gap="20px" alignItems="ceter">
                             <chakra.h1 fontSize="3xl" fontWeight="bold" >
-                                 PaintKu
+                                PaintKu
                             </chakra.h1>
                         </Flex>
                     </NoDecorationLink>
                     <Spacer />
-                    <HStack spacing={10}  fontSize="xl" display={{ base: 'none', md: 'flex' }}>
+                    <HStack spacing={10} fontSize="xl" display={{ base: 'none', md: 'flex' }}>
                         <Link to="/" color="white" >
                             Home
                         </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
                         <Link to="/" color="white">
                             Cart
                         </Link>
-                        {!isAuth?<Link to="/login"> <Button>Login</Button></Link>:<Link to="/profile"><Button>{userName}</Button></Link>}
+                        {!isAuth ? <Link to="/login"> <Button>Login</Button></Link> : <Link to="/profile"><Button>{userName}</Button></Link>}
                     </HStack>
                     <IconButton
                         display={{ base: 'inline-flex', md: 'none' }}
@@ -75,7 +75,7 @@ const Navbar = () => {
                     />
                 </Flex>
             </Box>
-            
+
             <Drawer
                 isOpen={isOpen}
                 placement="right"
@@ -97,7 +97,7 @@ const Navbar = () => {
                             <Link to="/" onClick={onClose}>
                                 Cart
                             </Link>
-                            {!isAuth?<Link to="/login"> <Button>Login</Button></Link>:<Link to="/profile"><Button>{userName}</Button></Link>}
+                            {!isAuth ? <Link to="/login"> <Button>Login</Button></Link> : <Link to="/profile"><Button>{userName}</Button></Link>}
                         </VStack>
                     </DrawerBody>
                 </DrawerContent>
