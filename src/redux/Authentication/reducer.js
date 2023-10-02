@@ -4,8 +4,8 @@ import { FETCH_FAILURE, FETCH_RQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_SUCC
 const initialState = {
     isLoading: false,
     isError: false,
-    user : {},
-    isAuth: false,
+    user: JSON.parse(localStorage.getItem("userDetails")) || {},
+    isAuth: JSON.parse(localStorage.getItem("userDetails")) ? true : false,
 }
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -14,15 +14,15 @@ export const reducer = (state = initialState, { type, payload }) => {
             return { ...state, isLoading: true }
         }
         case FETCH_FAILURE: {
-            return { ...state, isLoading : false,  isError: true }
-        }    
+            return { ...state, isLoading: false, isError: true }
+        }
         case LOGIN_SUCCESS: {
-            return { ...state, isLoading: false,isAuth: true, user : payload }
+            return { ...state, isLoading: false, isAuth: true, user: payload }
         }
         case SIGNUP_SUCCESS: {
             return { ...state, isLoading: false }
         }
-        case LOGOUT_SUCCESS:{
+        case LOGOUT_SUCCESS: {
             return initialState
         }
         default:

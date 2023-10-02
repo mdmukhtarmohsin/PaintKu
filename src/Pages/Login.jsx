@@ -24,6 +24,7 @@ function Login() {
     dispatch(login(email, password)).then(res => {
       if (res.length > 0) {
         dispatch({ type: LOGIN_SUCCESS, payload: res[0] });
+        localStorage.setItem("userDetails", JSON.stringify(res[0]))
         navigate(location.state, { replace: true })
       } else {
         alert("Incorrect Credentials");

@@ -1,7 +1,12 @@
 import { Box, Button, Card, CardBody, CardFooter, Image, Link, Text } from "@chakra-ui/react"
-import { Link as ReactRouterDom } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link as ReactRouterDom, useNavigate } from "react-router-dom";
+import { CART_ADD } from "../redux/actionTypes";
 
 const ProductCard = ({ image, title, price, rating, brand, id }) => {
+    const isAuth = useSelector(store => store.authReducer.isAuth)
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const handleRecent = (id, image, title, price, rating, brand) => {
         let recentData = JSON.parse(localStorage.getItem("recent")) || [];
         const existingProduct = recentData?.find(product => product.id === id);
@@ -20,6 +25,22 @@ const ProductCard = ({ image, title, price, rating, brand, id }) => {
             localStorage.setItem("recent", JSON.stringify(updatedRecent));
         }
     }
+    const handleCart = () => {
+        if (!isAuth) {
+            navigate("/login")
+        }
+        else {
+            let data = {
+                id,
+                image,
+                title,
+                price,
+                rating,
+                brand
+            }
+            dispatch({ type: CART_ADD, payload: data })
+        }
+    }
     return <Card>
         <CardBody onClick={() => (handleRecent(id, image, title, price, rating, brand))}>
             <Link as={ReactRouterDom} to={`/products/${id}`} textDecoration="none" _hover={{ textDecoration: "none" }}>
@@ -31,10 +52,8 @@ const ProductCard = ({ image, title, price, rating, brand, id }) => {
             </Link>
         </CardBody>
         <CardFooter>
-            <Button bg="#4AAB76" color="white" w={"100%"}>Add to Cart</Button>
+            <Button bg="#4AAB76" color="white" w={"100%"} onClick={() => (handleCart(id, image, title, price, rating, brand))}>Add to Cart</Button>
         </CardFooter>
     </Card>
-    //  <Box justifyContent={"center"} >
-    // </Box>
 }
 export default ProductCard;
