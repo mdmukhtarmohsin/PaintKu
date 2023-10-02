@@ -1,11 +1,11 @@
 import { FETCH_FAILURE, FETCH_RQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_SUCCESS } from "../actionTypes"
 
-
+const data = JSON.parse(localStorage.getItem("userDetails"));
 const initialState = {
     isLoading: false,
     isError: false,
     user: JSON.parse(localStorage.getItem("userDetails")) || {},
-    isAuth: JSON.parse(localStorage.getItem("userDetails")) ? true : false,
+    isAuth: data.name !== undefined ? true : false,
 }
 
 export const reducer = (state = initialState, { type, payload }) => {
