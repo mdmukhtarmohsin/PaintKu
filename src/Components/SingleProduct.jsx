@@ -1,5 +1,5 @@
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { store } from "../redux/store";
 import { useEffect, useState } from "react";

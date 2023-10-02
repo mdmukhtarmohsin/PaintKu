@@ -6,6 +6,7 @@ const initialState = {
     isError: false,
     user: JSON.parse(localStorage.getItem("userDetails")) || {},
     isAuth: data.name !== undefined ? true : false,
+    // isAuth:false
 }
 
 export const reducer = (state = initialState, { type, payload }) => {

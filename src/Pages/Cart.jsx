@@ -1,13 +1,30 @@
 import styled from "styled-components"
 import { SingleCart } from "../Components/singleCart"
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { CART_DELETE } from "../redux/actionTypes"
 
 const Cart =()=>{
+    const dispatch=useDispatch();
+
+    const [cartArray,setCartArray]=useState([])
+    const cartData = useSelector(store=> store.productReducer.cart);
+
+    useEffect(()=>{
+        setCartArray(cartData);
+    },[cartData]);
+
+    const deleteCart=(id)=>{
+        let update=[...cartArray];
+        update=update.filter(item=> item.id !==id);
+        dispatch({type:CART_DELETE, payload:update})
+    }
     return <>
      <DIV>
         <div className="box-1">
             {
-                Array(3).fill(-1).map((item,i)=>{
-                    return <SingleCart key={i} i={i}/>
+                cartArray?.map((item,i)=>{
+                    return <SingleCart key={i} i={i} {...item} deleteCart={deleteCart}/>
                 })
             }
         </div>
@@ -31,7 +48,6 @@ const Cart =()=>{
                 </div>
                 <hr />
                 <button>BUY NOW</button>
-
             </div>
 
         </div>
@@ -73,7 +89,6 @@ const DIV=styled.div`
         margin-bottom:20px;
     }
     button{
-        border: 1px solid black;
         width: 130px;
         height: 40px;
         border-radius:10px;

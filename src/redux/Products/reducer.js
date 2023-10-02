@@ -1,4 +1,4 @@
-import { All_PRODUCT, CART_ADD, FETCH_FAILURE, FETCH_RQUEST, HOME_PRODUCT } from "../actionTypes"
+import { All_PRODUCT, CART_ADD, CART_DELETE, FETCH_FAILURE, FETCH_RQUEST, HOME_PRODUCT } from "../actionTypes"
 
 
 const initialState = {
@@ -25,6 +25,9 @@ export const reducer = (state = initialState, { type, payload }) => {
         }
         case CART_ADD: {
             return { ...state, cart: [...state.cart, payload] }
+        }
+        case CART_DELETE: {
+            return { ...state, cart:payload }
         }
         default:
             return state;

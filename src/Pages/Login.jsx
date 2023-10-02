@@ -32,7 +32,9 @@ function Login() {
     });
   };
 
-
+//  if(isAuth){
+//   return <Navigate to="/"/>
+//  }
   return (
     <DIV auth={isAuth.toString()}>
       <div className="box">
