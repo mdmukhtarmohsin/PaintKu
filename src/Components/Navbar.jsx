@@ -58,7 +58,7 @@ const Navbar = () => {
                         <Link to="/products" color="white">
                             Products
                         </Link>
-                        <Link to="/" color="white">
+                        <Link to="/cart" color="white">
                             Cart
                         </Link>
                         {!isAuth ? <Link to="/login"> <Button>Login</Button></Link> : <Link to="/profile"><Button>{userName}</Button></Link>}
@@ -94,7 +94,7 @@ const Navbar = () => {
                             <Link to="/products" onClick={onClose}>
                                 Products
                             </Link>
-                            <Link to="/" onClick={onClose}>
+                            <Link to="/cart" onClick={onClose}>
                                 Cart
                             </Link>
                             {!isAuth ? <Link to="/login"> <Button>Login</Button></Link> : <Link to="/profile"><Button>{userName}</Button></Link>}

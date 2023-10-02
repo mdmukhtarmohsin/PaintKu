@@ -1,5 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import { store } from "../redux/store";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -44,6 +45,7 @@ const SingleProduct = () => {
         const data = products.filter(item => item.id == id);
         setSingleData(data[0]);
     }, [])
+
 
     return <div>
         <DIV>
