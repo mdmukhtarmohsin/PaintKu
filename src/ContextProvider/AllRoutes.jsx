@@ -7,6 +7,7 @@ import Products from "../Pages/Products";
 import { PrivateRouter } from "./PrivateRouter";
 import { Profile } from "../Pages/Profile";
 import { Cart } from "../Pages/Cart";
+import PageNotFound from "../Pages/PageNotFound";
 const AllRoutes = () => {
     return <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,6 +17,7 @@ const AllRoutes = () => {
         <Route path="/products/:id" element={<PrivateRouter><SingleProduct /></PrivateRouter>} />
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/cart"  element={<Cart/>}/>
+        <Route path="*" element={<PageNotFound />} />
     </Routes>
 }
 export default AllRoutes;
