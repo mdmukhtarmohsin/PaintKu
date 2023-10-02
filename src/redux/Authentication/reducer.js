@@ -1,4 +1,4 @@
-import { FETCH_FAILURE, FETCH_RQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS } from "../actionTypes"
+import { FETCH_FAILURE, FETCH_RQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_SUCCESS } from "../actionTypes"
 
 
 const initialState = {
@@ -21,6 +21,9 @@ export const reducer = (state = initialState, { type, payload }) => {
         }
         case SIGNUP_SUCCESS: {
             return { ...state, isLoading: false }
+        }
+        case LOGOUT_SUCCESS:{
+            return initialState
         }
         default:
             return state;
