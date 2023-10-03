@@ -36,7 +36,8 @@ const ProductCard = ({ image, title, price, rating, brand, id }) => {
                 title,
                 price,
                 rating,
-                brand
+                brand,
+                quantity:1
             }
             dispatch({ type: CART_ADD, payload: data })
         }

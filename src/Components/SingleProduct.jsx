@@ -37,7 +37,8 @@ const SingleProduct = () => {
             title: singleData.title,
             price: singleData.price,
             rating: singleData.rating,
-            brand: singleData.brand
+            brand: singleData.brand,
+            quantity:1
         }
         dispatch({ type: CART_ADD, payload: data })
     }
