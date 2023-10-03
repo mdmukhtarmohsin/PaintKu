@@ -12,7 +12,7 @@ const HomeProducts = () => {
         let api ="https://lcal-pay.onrender.com/products";
         dispatch(getData(api));
         dispatch(getAllProducts(api));
-    },[products])
+    },[])
     return <div style={{ marginLeft: "5%",marginBottom:"50px",marginTop:"50px" }}>
         <p style={{ fontSize: "45px", fontWeight: "300px" }}>Featured <span style={{ color: "green" }}>Artworks</span></p>
         <div style={{ width: "100%", display: "grid", gridTemplateColumns: "repeat(4,1fr)",gap:"20px" }}>
