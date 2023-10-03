@@ -84,7 +84,7 @@ If you have any Feedback, Please reach out to us at paraskamaliya5@gmail.com
 ## Authors
 
 **Team Lead :**
-- [Md Mukhtar Mohsin](https://github.com/JayachandranRamu)
+- [Md Mukhtar Mohsin](https://github.com/mdmukhtarmohsin)
 
 **Team Members :**
 - [Paras Kamaliya](https://github.com/paraskamaliya)
