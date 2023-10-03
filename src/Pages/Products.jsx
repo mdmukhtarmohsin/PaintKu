@@ -3,8 +3,6 @@ import { Box, Button, IconButton, Input, Select, SimpleGrid, Spinner, Stack } fr
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Productcard from "../Components/ProductCard";
-// import Footer from "../Components/Footer";
-// import ErrorIndicator from "../Components/ErrorIndicator";
 import Pagination from "../Components/Pagination";
 const Products = () => {
     const [sortcri, setSortCri] = useState("");
@@ -48,9 +46,7 @@ const Products = () => {
     const handlePageChange = (value) => {
         setCurrPage(value);
     }
-    const resetData = () => {
-        window.location.reload();
-    }
+
     let url1 = new URL("https://lcal-pay.onrender.com/products");
     const allthedata = () => {
         axios.get(url1)
@@ -93,7 +89,13 @@ const Products = () => {
                     <option value="Wall Design">Wall Design</option>
                 </Select>
                 <Button backgroundColor={"#4AAB76"} color={"white"} onClick={fetchTheData}>Apply</Button>
-                <Button backgroundColor={"red"} color={"white"} onClick={resetData}>Reset</Button>
+                <Button backgroundColor={"red"} color={"white"} onClick={() => {
+                    allthedata();
+                    setQuery("");
+                    setSortCri("");
+                    setSortOrd("");
+                    setFilter("");
+                }}>Reset</Button>
             </Stack>
             <SimpleGrid columns={["1", "1", "2", "4"]} spacing='20px' w={"100%"} m={"auto"} mt={"5"} gap={"20px"}>
                 {productData?.map((item) => {

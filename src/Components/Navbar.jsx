@@ -38,6 +38,7 @@ const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = React.useRef();
     const isAuth = useSelector((store) => store.authReducer.isAuth);
+    console.log(isAuth);
     const userName = useSelector(store => store.authReducer.user.name)
     return (
         <chakra.header marginBottom={"50px"} width={"100%"} >
