@@ -23,7 +23,7 @@ export const reducer = (state = initialState, { type, payload }) => {
             return { ...state, isLoading: false }
         }
         case LOGOUT_SUCCESS: {
-            return initialState
+            return { ...state, user: {}, isAuth: false }
         }
         default:
             return state;
