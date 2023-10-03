@@ -88,7 +88,7 @@ On this page user can see the details of the profile. Also user can logout from 
 
 ## Feedback
 
-If you have any Feedback, Please reach out to us at paraskamaliya5@gmail.com
+If you have any Feedback, Please reach out to us at jahirpp1999@gmail.com
 
 ## Authors
 
