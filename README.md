@@ -1,8 +1,8 @@
 # PaintKu.
 
-**Vercel :**  [PaintKu](https://paintku.vercel.app/)
-
 PaintKu. is basically E-Commerce which allows user to buy Paintings from online store.
+
+**Vercel :**  [PaintKu](https://paintku.vercel.app/)
 * User Page
 
 ## Tech Stack
