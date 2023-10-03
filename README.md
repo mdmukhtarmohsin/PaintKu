@@ -1,6 +1,7 @@
 # PaintKu.
 
-Deployed Link:- https://paintku.vercel.app/
+**Vercel :**  [PaintKu](https://paintku.vercel.app/)
+
 PaintKu. is basically E-Commerce which allows user to buy Paintings from online store.
 * User Page
 
