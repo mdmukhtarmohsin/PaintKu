@@ -46,7 +46,7 @@ const Navbar = () => {
                     <NoDecorationLink href="#" >
                         <Flex gap="20px" alignItems="ceter">
                             <chakra.h1 fontSize="3xl" fontWeight="bold" >
-                                PaintKu
+                                PaintKu.
                             </chakra.h1>
                         </Flex>
                     </NoDecorationLink>
